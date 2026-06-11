@@ -530,18 +530,28 @@ Respuesta:
 
 ### Sprint 11: Despliegue
 
+**Stack definitivo:** Supabase (DB) → Render (Backend) → Netlify (Frontend)
+
 **Duración estimada:** 1 sesión
 
 | # | Tarea | ✓ |
 |---|---|---|
 | 11.1 | Build de producción en frontend y backend | ☐ |
 | 11.2 | Configurar variables de entorno para producción | ☐ |
-| 11.3 | Desplegar backend en Railway / Render / Fly.io | ☐ |
-| 11.4 | Desplegar frontend en Vercel / Netlify | ☐ |
-| 11.5 | Configurar PostgreSQL en producción (Neon / Supabase / Railway) | ☐ |
-| 11.6 | Correr migraciones en producción | ☐ |
-| 11.7 | Test POSTMAN / curl de todos los endpoints | ☐ |
-| 11.8 | Push a GitHub | ☐ |
+| 11.3 | Crear proyecto en Supabase y obtener connection string | ☐ |
+| 11.4 | Desplegar backend en Render (root: backend/, start: node dist/src/main.js) | ☐ |
+| 11.5 | Correr migraciones y seed contra Supabase | ☐ |
+| 11.6 | Desplegar frontend en Netlify (root: frontend/, env: VITE_API_URL) | ☐ |
+| 11.7 | Test POSTMAN / curl de todos los endpoints + flujo completo | ☐ |
+| 11.8 | Sacar screenshots reales, actualizar README.md, push final a GitHub | ☐ |
+
+**Checklist de finalización:**
+- [ ] Supabase: proyecto creado, connection string funcionando
+- [ ] Render: backend live, Swagger accesible en /api/docs
+- [ ] Migraciones y seed corridos en Supabase, Dashboard con datos históricos
+- [ ] Netlify: frontend live, demo login funcional, booking flow operativo
+- [ ] README.md con URLs reales, screenshots, credenciales demo
+- [ ] Repositorio público en GitHub con última versión
 
 ---
 
