@@ -1,0 +1,110 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  CLIENT
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  password     String
+  role         Role          @default(CLIENT)
+  name         String
+  professional Professional?
+  appointments Appointment[]
+  notifications Notification[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Professional {
+  id           Int            @id @default(autoincrement())
+  name         String
+  specialty    String
+  imageUrl     String?
+  userId       Int            @unique
+  user         User           @relation(fields: [userId], references: [id])
+  isActive     Boolean        @default(true)
+  appointments Appointment[]
+  availability Availability[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model Service {
+  id              Int           @id @default(autoincrement())
+  name            String
+  description     String?
+  durationMinutes Int
+  price           Float
+  isActive        Boolean       @default(true)
+  appointments    Appointment[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model Availability {
+  id             Int          @id @default(autoincrement())
+  professionalId Int
+  professional   Professional @relation(fields: [professionalId], references: [id])
+  dayOfWeek      Int
+  startTime      String
+  endTime        String
+  isActive       Boolean      @default(true)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  @@index([professionalId, dayOfWeek])
+}
+
+model Appointment {
+  id              Int               @id @default(autoincrement())
+  date            DateTime          @db.Date
+  startTime       String
+  endTime         String
+  durationMinutes Int
+  price           Float
+  status          AppointmentStatus @default(PENDING)
+  userId          Int
+  user            User              @relation(fields: [userId], references: [id])
+  professionalId  Int
+  professional    Professional      @relation(fields: [professionalId], references: [id])
+  serviceId       Int
+  service         Service           @relation(fields: [serviceId], references: [id])
+  notes           String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@index([professionalId, date])
+  @@index([userId])
+  @@index([date])
+}
+
+model Notification {
+  id            Int      @id @default(autoincrement())
+  userId        Int
+  user          User     @relation(fields: [userId], references: [id])
+  type          String
+  title         String
+  message       String
+  appointmentId Int?
+  read          Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  @@index([userId, read])
+  @@index([userId, createdAt])
+}

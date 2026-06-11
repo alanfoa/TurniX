@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: turnix-api
+    runtime: node
+    repo: https://github.com/tu-usuario/turnix
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: node dist/src/main.js
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRATION
+        value: 24h
+      - key: FRONTEND_URL
+        sync: false
+      - key: PORT
+        value: 10000
