@@ -18,10 +18,10 @@
 **Sprint 7:** ██████████ 4/4 tareas  
 **Sprint 8:** ██████████ 8/9 tareas  
 **Sprint 9:** ████████████ 10/10 tareas  
-**Sprint 10:** ░░░░░░░░░░ 0/4 tareas  
+**Sprint 10:** ████████████ 4/4 tareas  
 **Sprint 11:** ░░░░░░░░░░ 0/8 tareas  
 
-**Total:** ████████░░ 98/111 tareas — 88%
+**Total:** █████████░ 102/111 tareas — 92%
 
 ---
 
@@ -515,16 +515,16 @@ Respuesta:
 
 | # | Tarea | ✓ |
 |---|---|---|
-| 10.1 | BACKEND: Seed mejorado — admin con contraseña distinta, 4 profesionales con avatars (UI Avatars), 5 servicios, ~50 turnos históricos en últimos 30 días | ☐ |
-| 10.2 | BACKEND: Swagger — instalar @nestjs/swagger, configurar DocumentBuilder en main.ts, ruta /api/docs | ☐ |
-| 10.3 | FRONTEND: Botones "Ingresar como Admin (Demo)" y "Ingresar como Cliente (Demo)" en Login.tsx con 1 clic | ☐ |
-| 10.4 | DOCS: README.md profesional en raíz con badges, tech stack, screenshots, setup instructions, botón demo | ☐ |
+| 10.1 | BACKEND: Seed mejorado — admin con contraseña distinta, 4 profesionales con avatars (UI Avatars), 5 servicios, ~50 turnos históricos en últimos 30 días | ✅ |
+| 10.2 | BACKEND: Swagger — instalar @nestjs/swagger, configurar DocumentBuilder en main.ts, ruta /api/docs | ✅ |
+| 10.3 | FRONTEND: Botones "Ingresar como Admin (Demo)" y "Ingresar como Cliente (Demo)" en Login.tsx con 1 clic | ✅ |
+| 10.4 | DOCS: README.md profesional en raíz con badges, tech stack, screenshots, setup instructions, botón demo | ✅ |
 
 **Checklist de finalización:**
-- [ ] Seed genera datos que llenan los gráficos del Dashboard desde el primer día
-- [ ] Swagger accesible en /api/docs con todos los endpoints documentados
-- [ ] Login con 1 clic para demo admin y demo cliente
-- [ ] README.md presentable en GitHub
+- [x] Seed genera datos que llenan los gráficos del Dashboard desde el primer día
+- [x] Swagger accesible en /api/docs con todos los endpoints documentados
+- [x] Login con 1 clic para demo admin y demo cliente
+- [x] README.md presentable en GitHub
 
 ---
 
