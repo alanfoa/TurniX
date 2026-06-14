@@ -2,7 +2,7 @@ services:
   - type: web
     name: turnix-api
     runtime: node
-    repo: https://github.com/tu-usuario/turnix
+    repo: https://github.com/alanfoa/TurniX
     rootDir: backend
     buildCommand: npm install && npm run build
     startCommand: node dist/src/main.js
