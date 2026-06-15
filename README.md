@@ -41,21 +41,6 @@
 | Cliente | cliente@turnix.com | admin123 |
 
 ---
-
-## 🖼️ Capturas
-
-> _Agregá capturas reales de tu Landing y Dashboard aquí_
-
-### Landing Page
-```
-![Landing](screenshots/landing.png)
-```
-
-### Dashboard
-```
-![Dashboard](screenshots/dashboard.png)
-```
-
 ---
 
 ## 🛠️ Stack tecnológico
@@ -92,7 +77,7 @@
 
 ### 1. Clonar repositorio
 ```bash
-git clone https://github.com/tu-usuario/turnix.git
+git clone https://github.com/alanfoa/TurniX.git
 cd turnix
 ```
 
